@@ -5,10 +5,15 @@
         $(document).ready(function() {
             $("h1").on('click', function () {
                 console.log("00000");
-                $.post("/t", {}, function (data) {
-                    console.log("FIRE!");
+                $.post("cgi-bin/t.cgi", {}, function (data) {
+                    console.log(data);
                 });
             });
+        });
+        var posting = $.post( url, { name: namev, age: agev } );
+
+        posting.done(function( data ) {
+            $( "#result" ).empty().append( data );
         });
     </script>
 </head>
