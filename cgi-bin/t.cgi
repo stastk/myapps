@@ -1,4 +1,4 @@
-#!/usr/bin/env perl
+#!/usr/bin/python
 use strict;
 use warnings FATAL => 'all';
 print "SOMETHING";
