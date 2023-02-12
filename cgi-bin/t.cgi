@@ -1,4 +1,3 @@
-#!/usr/bin/python
+#!/usr/bin/perl  -w
 use strict;
-use warnings FATAL => 'all';
 print "SOMETHING";
