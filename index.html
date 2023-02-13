@@ -6,7 +6,7 @@
         $(document).ready(function() {
             $("h1").on('click', function () {
                 $.ajax({
-                    url: "/t.cgi",
+                    url: "/cgi-bin/t.cgi",
                     type: "POST",
                     data: {t: 'somesome', d: 'normal'},
                     success: function(response){
