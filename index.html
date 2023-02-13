@@ -2,18 +2,18 @@
 <head>
     <script src="jquery-3.6.3.js"></script>
     <script>
+        var url = 'someurl'
         $(document).ready(function() {
             $("h1").on('click', function () {
-                console.log("00000");
-                $.post("cgi-bin/t.cgi", {}, function (data) {
-                    console.log(data);
+                $.ajax({
+                    url: "/t.cgi",
+                    type: "POST",
+                    data: {t: 'somesome', d: 'normal'},
+                    success: function(response){
+                        $("h1").html(response);
+                    }
                 });
             });
-        });
-        var posting = $.post( url, { name: namev, age: agev } );
-
-        posting.done(function( data ) {
-            $( "#result" ).empty().append( data );
         });
     </script>
 </head>
