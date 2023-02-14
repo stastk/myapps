@@ -1,20 +1,21 @@
-#!/usr/bin/perl  -w
+#!/bin/perl
+
 use strict;
 use warnings;
+use diagnostics;
 use CGI;
+use CGI::Carp 'fatalsToBrowser';
 use LWP::UserAgent;
-use Data::Dumper;
 
-print CGI::header();
-print "SOMETHING";
-
+#my $t = param("t");
+my $cgi = CGI->new;
+my $t = $cgi->param('t');   
 my $ua = new LWP::UserAgent;
 $ua->agent("AgentName/0.1 " . $ua->agent);
 
-my $t = $CGI->param("t");
-my $d = $CGI->param("d");
+print CGI::header();
 
-my $req = new HTTP::Request GET => "http://ne3a.ru/?t=${t}&d=${d}";
+my $req = new HTTP::Request POST => "http://ne3a.ru/?t=${t}"; 
 my $res = $ua->request($req);
 
-print Dumper($res->content);
+print $res->content;

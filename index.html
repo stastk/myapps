@@ -2,15 +2,27 @@
 <head>
     <script src="jquery-3.6.3.js"></script>
     <script>
-        var url = 'someurl'
+        var url = '/cgi-bin/t.cgi'
         $(document).ready(function() {
             $("h1").on('click', function () {
                 $.ajax({
-                    url: "/cgi-bin/t.cgi",
+                    url: url,
                     type: "POST",
-                    data: {t: 'somesome', d: 'normal'},
+                    data: {t: 'Why you do that?'},
                     success: function(response){
-                        $("h1").html(response);
+                        let obj = $.parseJSON(response);
+                        $("#t").html(obj['something']);
+                    }
+                });
+            });
+            $("#t").on('click', function () {
+                $.ajax({
+                    url: url,
+                    type: "POST",
+                    data: {t: 'Stop clicking!'},
+                    success: function(response){
+                        let obj = $.parseJSON(response);
+                        $("#t").html(obj['something']);
                     }
                 });
             });
@@ -18,5 +30,6 @@
     </script>
 </head>
 <body>
-<h1>Hi there!</h1>
+<h1>Hello there!</h1>
+<div id="t"></div>
 </body>
