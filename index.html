@@ -1,35 +1,5 @@
 <!DOCTYPE HTML>
-<head>
-    <script src="jquery-3.6.3.js"></script>
-    <script>
-        var url = '/cgi-bin/t.cgi'
-        $(document).ready(function() {
-            $("h1").on('click', function () {
-                $.ajax({
-                    url: url,
-                    type: "POST",
-                    data: {t: 'Why you do that?'},
-                    success: function(response){
-                        let obj = $.parseJSON(response);
-                        $("#t").html(obj['something']);
-                    }
-                });
-            });
-            $("#t").on('click', function () {
-                $.ajax({
-                    url: url,
-                    type: "POST",
-                    data: {t: 'Stop clicking!'},
-                    success: function(response){
-                        let obj = $.parseJSON(response);
-                        $("#t").html(obj['something']);
-                    }
-                });
-            });
-        });
-    </script>
-</head>
+<head></head>
 <body>
-<h1>Hello there!</h1>
-<div id="t"></div>
+<h1>Go away!</h1>
 </body>
