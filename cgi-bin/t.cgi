@@ -2,21 +2,24 @@
 
 use strict;
 use warnings;
+use warnings qw(FATAL utf8);
 use diagnostics;
 use CGI;
+use URI::Escape;
 use CGI::Carp 'fatalsToBrowser';
 use LWP::UserAgent;
 
-#my $t = param("t");
 my $cgi = CGI->new;
 my $t = $cgi->param('t');   
 my $d = $cgi->param('d');   
 my $ua = new LWP::UserAgent;
 $ua->agent("AgentName/0.1 " . $ua->agent);
-
 print CGI::header();
 
-my $req = new HTTP::Request POST => "http://ne3a.ru/remapper/v1?t=${t}&d=${d}"; 
+my $url = "http://ne3a.ru/remapper/v1?t=${t}&d=${d}";
+my $req = new HTTP::Request POST => $url; 
 my $res = $ua->request($req);
 
-print $res->content;
+my $answer = $res->content;
+
+print $answer;
