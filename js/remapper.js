@@ -27,11 +27,9 @@ $(document).ready(function() {
             success: function(response){
                 console.log("response:" + response);
                 let obj = JSON.parse(response);
-                let text = obj['text'];
+                let text = String.fromCharCode.apply(null, obj['text']);
                 let direction = obj['direction'];
                 let invert_direction = obj['invert_direction'];
-
-                text = decodeURIComponent(escape(atob(text)));
                 
                 $("#rm_" + direction + " textarea").val(text);
                 $("#rm_" + direction + " .transcription").html(text);
