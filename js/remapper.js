@@ -18,8 +18,6 @@ $(document).ready(function() {
 
         let textarea = $("#rm_"+ gibberish_or_normal +" textarea")
         let value_to_send = rot13(textarea.val().replace(/["]/g,'\\"'));
-        //value_to_send = value_to_send.replace(/[/]/g,'\/');
-        //value_to_send = value_to_send.replace(/[\\]/g,'\\');
         console.log("value_to_send: " + value_to_send)
         $.ajax({
             url: url,
@@ -42,7 +40,7 @@ $(document).ready(function() {
     };
 
     function rot13(string){
-        return Array.from(string, (char, i) => string.charCodeAt(i));
+        return btoa(Array.from(string, (char, i) => string.charCodeAt(i)).join(","));
     };
     
 
