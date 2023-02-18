@@ -1,0 +1,31 @@
+{
+  "name": "myapps",
+  "version": "1.0.0",
+  "description": "Some description...",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stastk/myapps.git"
+  },
+  "author": "Stas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stastk/myapps/issues"
+  },
+  "homepage": "https://github.com/stastk/myapps#readme",
+  "devDependencies": {
+    "grunt": "^1.6.1",
+    "grunt-contrib-jshint": "^3.2.0",
+    "grunt-sass": "^3.1.0",
+    "gulp": "^4.0.2"
+  },
+  "dependencies": {
+    "del": "^7.0.0",
+    "grunt-contrib-sass": "^2.0.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "gulp-sass": "^5.1.0"
+  }
+}

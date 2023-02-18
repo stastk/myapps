@@ -1,2 +1,318 @@
-@font-face{font-family:"Phyrexian";src:local("Phyrexian"),url("/fonts/Phyrexian-Regular.ttf");font-weight:normal}@font-face{font-family:"Phi_horizontal_gbrsh_2.1";src:local("Phi_horizontal_gbrsh_2.1"),url("/fonts/Phi_horizontal_gbrsh_2.1.ttf");font-weight:normal}@font-face{font-family:'Ubuntu';font-style:normal;font-weight:700;src:local("Ubuntu"),url("/fonts/Ubuntu-Bold.ttf")}@font-face{font-family:'Ubuntu';font-style:italic;font-weight:700;src:local("Ubuntu"),url("/fonts/Ubuntu-BoldItalic.ttf")}@font-face{font-family:'Ubuntu';font-style:italic;font-weight:700;src:local("Ubuntu"),url("/fonts/Ubuntu-Italic.ttf")}@font-face{font-family:'Ubuntu';font-style:normal;font-weight:500;src:local("Ubuntu"),url("/fonts/Ubuntu-Medium.ttf")}@font-face{font-family:'Ubuntu';font-style:italic;font-weight:500;src:local("Ubuntu"),url("/fonts/Ubuntu-MediumItalic.ttf")}@font-face{font-family:'Ubuntu';font-style:normal;font-weight:400;src:local("Ubuntu"),url("/fonts/Ubuntu-Regular.ttf")}:root{--text-basic-color: #222222;--text-secondary-color: #666666;--text-subsecondary-color: #999999;--primary-color: #5200ff;--border-secondary-color: #f2f2f2;--background-secondary-color: #fdfdfd;--radius-1: 8px}*{margin:0;padding:0}body.app{font-family:Ubuntu, "times new roman", times, roman, serif;display:flex;flex-direction:row;color:var(--text-basic-color)}body.app nav{padding-top:30px;min-width:200px}body.app #main_content{padding-top:30px;max-width:calc(100vw - 400px)}body.app #main_content header{display:flex;flex-direction:row;align-items:center;margin-bottom:30px}body.app #main_content header h1{font-size:24px;width:100%}body.app #main_content header .topsider{margin-top:6px;display:flex}body.app #main_content header .topsider span{font-size:14px;white-space:nowrap}body.app #main_content header .topsider span a{color:var(--primary-color)}body.app #main_content #intro_picture{margin-bottom:30px;background:url(/pics/phyrexian_font_promo.png);height:200px;background-position:center center;background-size:100%;border-radius:var(--radius-1);position:relative}body.app #main_content #intro_picture span{display:block;text-align:right;bottom:-130px;height:100%;position:absolute;right:15px;white-space:break-spaces;cursor:default;color:rgba(255,255,255,0.5)}#remapper_itself{display:flex;flex-direction:row}#remapper_itself .rm_field{display:flex;flex:1;flex-direction:column;max-width:calc(50% - 23px)}#remapper_itself .rm_field .title{font-size:18px;font-weight:600;margin-bottom:10px}#remapper_itself .rm_field textarea{display:flex;width:100%;min-height:200px;border-radius:var(--radius-1);padding:15px;border:1px solid var(--border-secondary-color);background-color:var(--background-secondary-color);resize:none}#remapper_itself .rm_field textarea::-webkit-input-placeholder{color:var(--text-subsecondary-color)}#remapper_itself .rm_field textarea:-moz-placeholder{color:var(--text-subsecondary-color)}#remapper_itself .rm_field textarea::-moz-placeholder{color:var(--text-subsecondary-color)}#remapper_itself .rm_field textarea:-ms-input-placeholder{color:var(--text-subsecondary-color)}#remapper_itself .rm_field textarea::placeholder{color:var(--text-subsecondary-color)}#remapper_itself .rm_arrows{display:flex;flex-direction:column;height:100px;margin:80px 10px}#remapper_itself .rm_arrows svg{width:26px;color:var(--text-subsecondary-color)}#remapper_itself .rm_arrows svg+svg{transform:rotate(180deg)}#remapper_itself .transcription{font-size:24px;white-space:pre-wrap;line-break:anywhere;margin:20px 0}#remapper_itself .rm_gibberish .transcription{font-family:"Phi_horizontal_gbrsh_2.1"}#remapper_itself .rm_normal .transcription{font-family:"Phyrexian"}#rm_maps .cols{display:flex;flex-direction:row}#rm_maps .rm_map{display:flex;flex-wrap:wrap;margin-bottom:10px}#rm_maps .rm_map .char{display:flex;flex-direction:column;border:1px solid;width:38px;height:60px;margin:0 3px 3px 0;border-radius:4px}#rm_maps .rm_map .char span{font-size:24px;height:50%;text-align:center;display:flex;justify-content:center;align-items:center}#rm_maps .rm_map .char i{font-size:16px;height:50%;text-align:center;display:flex;justify-content:center;align-items:center}#rm_maps .rm_map.rm_normal_map span{font-family:"Phyrexian"}#rm_maps .rm_map.rm_gibberish_map span{font-family:"Phi_horizontal_gbrsh_2.1"}
+@font-face {
+  font-family: "Phyrexian";
+  src: local("Phyrexian"), url("../fonts/Phyrexian-Regular.ttf");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Phi_horizontal_gbrsh_2.1";
+  src: local("Phi_horizontal_gbrsh_2.1"), url("../fonts/Phi_horizontal_gbrsh_2.1.ttf");
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 700;
+  src: local("Ubuntu"), url("../fonts/Ubuntu-Bold.ttf");
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: italic;
+  font-weight: 700;
+  src: local("Ubuntu"), url("../fonts/Ubuntu-BoldItalic.ttf");
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: italic;
+  font-weight: 700;
+  src: local("Ubuntu"), url("../fonts/Ubuntu-Italic.ttf");
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 500;
+  src: local("Ubuntu"), url("../fonts/Ubuntu-Medium.ttf");
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: italic;
+  font-weight: 500;
+  src: local("Ubuntu"), url("../fonts/Ubuntu-MediumItalic.ttf");
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Ubuntu"), url("../fonts/Ubuntu-Regular.ttf");
+}
+:root {
+  --text-basic-color: #222222;
+  --text-secondary-color: #666666;
+  --text-subsecondary-color: #999999;
+  --text-info-subsecondary-color: #bbbbbb;
+  --super-primary-color: #EF0048;
+  --primary-color: #5200ff;
+  --border-secondary-color: #f2f2f2;
+  --background-secondary-color: #fdfdfd;
+  --background-attention-color: #f9f9f9;
+  --radius-1: 8px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body.app {
+  font-family: Ubuntu, "times new roman", times, roman, serif;
+  display: flex;
+  flex-direction: row;
+  color: var(--text-basic-color);
+}
+body.app nav {
+  padding-top: 30px;
+  min-width: 200px;
+}
+body.app nav #logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  max-height: 32px;
+  cursor: pointer;
+  padding: 0 0 0 20px;
+  margin-top: -2px;
+}
+body.app nav #logo .back {
+  color: red;
+}
+body.app nav #logo .back svg {
+  width: 16px;
+  color: var(--text-basic-color);
+}
+body.app nav #logo .logo_image {
+  margin: 0 10px;
+}
+body.app nav #logo .logo_image svg {
+  color: var(--super-primary-color);
+  width: 32px;
+}
+body.app nav #logo .logo_text {
+  color: red;
+}
+body.app nav #logo .logo_text span {
+  color: var(--text-basic-color);
+}
+body.app #main_content {
+  padding-top: 30px;
+  max-width: calc(100vw - 400px);
+  width: 100%;
+}
+body.app #main_content header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 30px;
+}
+body.app #main_content header h1 {
+  font-size: 24px;
+  width: 100%;
+}
+body.app #main_content header .topsider {
+  margin-top: 6px;
+  display: flex;
+}
+body.app #main_content header .topsider span {
+  font-size: 14px;
+  white-space: nowrap;
+  height: 20px;
+  align-items: center;
+  display: flex;
+}
+body.app #main_content header .topsider a {
+  font-size: 14px;
+  color: var(--primary-color);
+  display: flex;
+  height: 20px;
+  align-items: center;
+  margin-left: 3px;
+}
+body.app #main_content header .topsider a svg {
+  width: 21px;
+  margin-left: 3px;
+}
+body.app #main_content #intro_picture {
+  margin-bottom: 30px;
+  background: url(../pics/phyrexian_font_promo.png);
+  height: 200px;
+  background-position: center center;
+  background-size: 100%;
+  border-radius: var(--radius-1);
+  position: relative;
+}
+body.app #main_content #intro_picture span {
+  display: block;
+  text-align: right;
+  bottom: -130px;
+  height: 100%;
+  position: absolute;
+  right: 15px;
+  white-space: break-spaces;
+  cursor: default;
+  color: rgba(255, 255, 255, 0.5);
+}
+body.app #disclaimer {
+  background: var(--background-attention-color);
+  padding: 30px;
+  margin: 30px 0;
+}
+body.app #disclaimer p {
+  font-size: 12px;
+  color: var(--text-basic-color);
+}
+body.app #copyright_section {
+  margin: 30px 0;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body.app #copyright_section span {
+  font-size: 15px;
+  color: var(--text-basic-color);
+}
+body.app #copyright_section img {
+  margin: 0 10px;
+}
+
+#remapper_itself {
+  display: flex;
+  flex-direction: row;
+}
+#remapper_itself .rm_field {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  max-width: calc(50% - 23px);
+}
+#remapper_itself .rm_field .title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+#remapper_itself .rm_field textarea {
+  display: flex;
+  width: 100%;
+  min-height: 200px;
+  border-radius: var(--radius-1);
+  padding: 15px;
+  border: 1px solid var(--border-secondary-color);
+  background-color: var(--background-secondary-color);
+  resize: none;
+}
+#remapper_itself .rm_field textarea::-webkit-input-placeholder {
+  color: var(--text-subsecondary-color);
+}
+#remapper_itself .rm_field textarea:-moz-placeholder {
+  color: var(--text-subsecondary-color);
+}
+#remapper_itself .rm_field textarea::-moz-placeholder {
+  color: var(--text-subsecondary-color);
+}
+#remapper_itself .rm_field textarea:-ms-input-placeholder {
+  color: var(--text-subsecondary-color);
+}
+#remapper_itself .rm_field textarea::placeholder {
+  color: var(--text-subsecondary-color);
+}
+#remapper_itself .rm_arrows {
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  margin: 80px 10px;
+  width: 30px;
+  align-items: center;
+}
+#remapper_itself .rm_arrows svg {
+  width: 26px;
+  color: var(--text-subsecondary-color);
+}
+#remapper_itself .rm_arrows svg + svg {
+  transform: rotate(180deg);
+}
+#remapper_itself .transcription {
+  font-size: 24px;
+  white-space: pre-wrap;
+  line-break: anywhere;
+  margin: 20px 0;
+}
+#remapper_itself .rm_gibberish .transcription {
+  font-family: "Phi_horizontal_gbrsh_2.1";
+}
+#remapper_itself .rm_normal .transcription {
+  font-family: "Phyrexian";
+}
+
+#rm_maps .cols {
+  display: flex;
+  flex-direction: row;
+}
+#rm_maps .nothing {
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  margin: 80px 10px;
+  width: 30px;
+}
+#rm_maps .rm_map {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+  max-width: calc(50% - 23px);
+  height: max-content;
+}
+#rm_maps .rm_map .char {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  width: 38px;
+  height: 60px;
+  margin: 0 3px 15px 3px;
+  border-radius: 4px;
+  border: 3px solid #fff;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15), 0px 0px 1px 0px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+#rm_maps .rm_map .char:hover {
+  border-color: var(--primary-color);
+}
+#rm_maps .rm_map .char:hover:focus, #rm_maps .rm_map .char:hover:active {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+#rm_maps .rm_map .char span {
+  font-size: 24px;
+  height: 50%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#rm_maps .rm_map .char i {
+  font-size: 16px;
+  height: 50%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-info-subsecondary-color);
+}
+#rm_maps .rm_map.rm_normal_map span {
+  font-family: "Phyrexian";
+}
+#rm_maps .rm_map.rm_gibberish_map span {
+  font-family: "Phi_horizontal_gbrsh_2.1";
+}
+
 /*# sourceMappingURL=style.css.map */

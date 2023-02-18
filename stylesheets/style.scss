@@ -1,0 +1,323 @@
+@font-face {
+  font-family: "Phyrexian";
+  src: local("Phyrexian"), url("../fonts/Phyrexian-Regular.ttf");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Phi_horizontal_gbrsh_2.1";
+  src: local("Phi_horizontal_gbrsh_2.1"), url("../fonts/Phi_horizontal_gbrsh_2.1.ttf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Ubuntu'), url("../fonts/Ubuntu-Bold.ttf");
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Ubuntu'), url("../fonts/Ubuntu-BoldItalic.ttf");
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Ubuntu'), url("../fonts/Ubuntu-Italic.ttf");
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Ubuntu'), url("../fonts/Ubuntu-Medium.ttf");
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: italic;
+  font-weight: 500;
+  src: local('Ubuntu'), url("../fonts/Ubuntu-MediumItalic.ttf");
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Ubuntu'), url("../fonts/Ubuntu-Regular.ttf");
+}
+
+:root{
+  --text-basic-color: #222222;
+  --text-secondary-color: #666666;
+  --text-subsecondary-color: #999999;
+  --text-info-subsecondary-color: #bbbbbb;
+  --super-primary-color: #EF0048;
+  --primary-color: #5200ff;
+  --border-secondary-color: #f2f2f2;
+  --background-secondary-color: #fdfdfd;
+  --background-attention-color: #f9f9f9;
+  --radius-1: 8px;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body.app{
+  font-family: Ubuntu, "times new roman", times, roman, serif;
+  display: flex;
+  flex-direction: row;
+  color: var(--text-basic-color);
+  nav{
+    padding-top: 30px;
+    min-width: 200px;
+    #logo{
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      max-height: 32px;
+      cursor: pointer;
+      padding: 0 0 0 20px;
+      margin-top: -2px;
+      .back{
+        color:red;
+        svg{
+          width: 16px;
+          color: var(--text-basic-color);
+        }
+      }
+      .logo_image{
+        margin: 0 10px;
+        svg{
+          color: var(--super-primary-color);
+          width: 32px;
+        }
+      }
+      .logo_text{
+        color:red;
+        span{
+          color: var(--text-basic-color);
+        }
+      }
+    }
+  }
+  #main_content{
+    padding-top: 30px;
+    max-width: calc(100vw - 400px);
+    width: 100%;
+    header{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 30px;
+      h1{
+        font-size: 24px;
+        width: 100%;
+      }
+      .topsider{
+        margin-top: 6px;
+        display: flex;
+        span{
+          font-size: 14px;
+          white-space: nowrap;
+          height: 20px;
+          align-items: center;
+          display: flex;
+        }
+        a{
+          font-size: 14px;
+          color: var(--primary-color);
+          display: flex;
+          height: 20px;
+          align-items: center;
+          margin-left: 3px;
+          svg{
+            width: 21px;
+            margin-left: 3px;
+          }
+        }
+      }
+    }
+    #intro_picture{
+      margin-bottom: 30px;
+      background: url(../pics/phyrexian_font_promo.png);
+      height: 200px;
+      background-position: center center;
+      background-size: 100%;
+      border-radius: var(--radius-1);
+      position: relative;
+      span{
+        display: block;
+        text-align: right;
+        bottom: -130px;
+        height: 100%;
+        position: absolute;
+        right: 15px;
+        white-space: break-spaces;
+        cursor: default;
+        color: rgba(255, 255, 255, .5);
+      }
+    }
+  }
+  #disclaimer{
+    background: var(--background-attention-color);
+    padding: 30px;
+    margin: 30px 0;
+    p{
+      font-size: 12px;
+      color: var(--text-basic-color);
+    }
+  }
+  #copyright_section{
+    margin: 30px 0;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    span{
+      font-size: 15px;
+      color: var(--text-basic-color);
+    }
+    img{
+      margin: 0 10px;
+    }
+  }
+}
+
+
+
+#remapper_itself{
+  display: flex;
+  flex-direction: row;
+  .rm_field{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    max-width: calc(50% - 23px);
+    .title{
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    textarea{
+      display: flex;
+      width: 100%;
+      min-height: 200px;
+      border-radius: var(--radius-1);
+      padding: 15px;
+      border: 1px solid var(--border-secondary-color);
+      background-color: var(--background-secondary-color);
+      resize: none;
+      &::-webkit-input-placeholder{color: var(--text-subsecondary-color)}
+      &:-moz-placeholder{color: var(--text-subsecondary-color)}
+      &::-moz-placeholder{color: var(--text-subsecondary-color)}
+      &:-ms-input-placeholder{color: var(--text-subsecondary-color)}
+      &::placeholder{color: var(--text-subsecondary-color)}
+    }
+  }
+  .rm_arrows{
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    margin: 80px 10px;
+    width: 30px;
+    align-items: center;
+    svg{
+      width: 26px;
+      color: var(--text-subsecondary-color);
+      &+svg{
+        transform: rotate(180deg);
+      }
+    }
+  }
+  .transcription{
+    font-size: 24px;
+    white-space: pre-wrap;
+    line-break: anywhere;
+    margin: 20px 0;
+  }
+  .rm_gibberish{
+    .transcription{
+      font-family: "Phi_horizontal_gbrsh_2.1";
+    }
+  }
+  .rm_normal{
+    .transcription{
+      font-family: "Phyrexian";
+    }
+  }
+}
+
+#rm_maps{
+  .cols{
+    display: flex;
+    flex-direction: row;
+  }
+  .nothing{
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    margin: 80px 10px;
+    width: 30px;
+  }
+  .rm_map{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    max-width: calc(50% - 23px);
+    height: max-content;
+    .char{
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      width: 38px;
+      height: 60px;
+      margin: 0 3px 15px 3px;
+      border-radius: 4px;
+      border: 3px solid #fff;
+      box-shadow: 0px 1px 2px 0px rgba(0,0,0,.15), 0px 0px 1px 0px rgba(0,0,0,.15);
+      cursor: pointer;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      &:hover{
+        border-color: var(--primary-color);
+        &:focus, &:active{
+          background-color: var(--primary-color);
+          color: #fff;
+        }
+      }
+      span{
+        font-size: 24px;
+        height: 50%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      i{
+        font-size: 16px;
+        height: 50%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--text-info-subsecondary-color);
+      }
+    }
+    &.rm_normal_map{
+      span{
+        font-family: "Phyrexian";
+      }
+    }
+    &.rm_gibberish_map{
+      span{
+        font-family: "Phi_horizontal_gbrsh_2.1";
+      }
+    }
+  }
+}
