@@ -5,7 +5,7 @@ $(document).ready(function() {
     var gibberish_textarea = $("#rm_gibberish textarea")
 
     content.bind('input propertychange', function() {
-        let misunderstanding = ["q", "x", ":"]
+        let misunderstanding = ["q", "x", ":", "j"]
         misunderstanding.forEach(function(char) {
             gibberish_textarea.val(gibberish_textarea.val().replace( char,  "" ));
         });
