@@ -1,5 +1,4 @@
 var url = '/cgi-bin/t.cgi'
-console.log("asd");
 $(document).ready(function() {
 
     var content            = $("textarea");
@@ -12,6 +11,16 @@ $(document).ready(function() {
         });
         transcript_it($(this).data("gibberish-or-normal"));
         return false;
+    });
+
+    $('.char').on("click", function() {
+        let direction = $(this).parent().data("gibberish-or-normal")
+        let value = $(this).find('span').text();
+        console.log("VALUE: " + value + "; direction: " + direction + ";");
+        let textarea = $("#rm_" + direction + " textarea");
+        textarea.val(textarea.val() + value);
+        console.log("TEXTAREA: " + textarea.val());
+        transcript_it(direction);
     });
 
     function transcript_it(gibberish_or_normal){
