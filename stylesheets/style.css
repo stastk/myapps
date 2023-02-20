@@ -1,11 +1,11 @@
 @font-face {
   font-family: "Phyrexian";
-  src: local("Phyrexian"), url("../fonts/Phyrexian-Regular.ttf");
+  src: local("Phyrexian"), url("../fonts/Phi_normal_2.9.ttf");
   font-weight: normal;
 }
 @font-face {
-  font-family: "Phi_horizontal_gbrsh_2.7";
-  src: local("Phi_horizontal_gbrsh_2.7"), url("../fonts/Phi_horizontal_gbrsh_2.7.ttf");
+  font-family: "Phi_horizontal_gbrsh_2.9";
+  src: local("Phi_horizontal_gbrsh_2.9"), url("../fonts/Phi_horizontal_gbrsh_2.9.ttf");
   font-weight: normal;
 }
 @font-face {
@@ -245,7 +245,7 @@ body.app #copyright_section img {
   margin: 20px 0;
 }
 #remapper_itself .rm_gibberish .transcription {
-  font-family: "Phi_horizontal_gbrsh_2.7";
+  font-family: "Phi_horizontal_gbrsh_2.9";
 }
 #remapper_itself .rm_normal .transcription {
   font-family: "Phyrexian";
@@ -312,7 +312,7 @@ body.app #copyright_section img {
   font-family: "Phyrexian";
 }
 #rm_maps .rm_map.rm_gibberish_map span {
-  font-family: "Phi_horizontal_gbrsh_2.7";
+  font-family: "Phi_horizontal_gbrsh_2.9";
 }
 
 /*# sourceMappingURL=style.css.map */
