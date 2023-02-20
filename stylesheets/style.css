@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "Phyrexian";
-  src: local("Phyrexian"), url("../fonts/Phi_normal_2.9.ttf");
+  font-family: "Phi_normal_2.9";
+  src: local("Phi_normal_2.9"), url("../fonts/Phi_normal_2.9.ttf");
   font-weight: normal;
 }
 @font-face {
@@ -55,6 +55,8 @@
   --background-secondary-color: #fdfdfd;
   --background-attention-color: #f9f9f9;
   --radius-1: 8px;
+  --font-gbrsh: "Phi_horizontal_gbrsh_2.9";
+  --font-normal: "Phi_normal_2.9";
 }
 
 * {
@@ -245,10 +247,10 @@ body.app #copyright_section img {
   margin: 20px 0;
 }
 #remapper_itself .rm_gibberish .transcription {
-  font-family: "Phi_horizontal_gbrsh_2.9";
+  font-family: var(--font-gbrsh);
 }
 #remapper_itself .rm_normal .transcription {
-  font-family: "Phyrexian";
+  font-family: var(--font-normal);
 }
 
 #rm_maps .cols {
@@ -309,10 +311,10 @@ body.app #copyright_section img {
   color: var(--text-info-subsecondary-color);
 }
 #rm_maps .rm_map.rm_normal_map span {
-  font-family: "Phyrexian";
+  font-family: var(--font-normal);
 }
 #rm_maps .rm_map.rm_gibberish_map span {
-  font-family: "Phi_horizontal_gbrsh_2.9";
+  font-family: var(--font-gbrsh);
 }
 
 /*# sourceMappingURL=style.css.map */
