@@ -4,8 +4,8 @@
   font-weight: normal;
 }
 @font-face {
-  font-family: "Phi_horizontal_gbrsh_2.1";
-  src: local("Phi_horizontal_gbrsh_2.1"), url("../fonts/Phi_horizontal_gbrsh_2.6.ttf");
+  font-family: "Phi_horizontal_gbrsh_2.7";
+  src: local("Phi_horizontal_gbrsh_2.7"), url("../fonts/Phi_horizontal_gbrsh_2.7.ttf");
   font-weight: normal;
 }
 @font-face {
@@ -238,7 +238,7 @@ body.app{
   }
   .rm_gibberish{
     .transcription{
-      font-family: "Phi_horizontal_gbrsh_2.1";
+      font-family: "Phi_horizontal_gbrsh_2.7";
     }
   }
   .rm_normal{
@@ -312,7 +312,7 @@ body.app{
     }
     &.rm_gibberish_map{
       span{
-        font-family: "Phi_horizontal_gbrsh_2.6";
+        font-family: "Phi_horizontal_gbrsh_2.7";
       }
     }
   }
