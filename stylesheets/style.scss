@@ -5,7 +5,7 @@
 }
 @font-face {
   font-family: "Phi_horizontal_gbrsh_2.1";
-  src: local("Phi_horizontal_gbrsh_2.1"), url("../fonts/Phi_horizontal_gbrsh_2.4.ttf");
+  src: local("Phi_horizontal_gbrsh_2.1"), url("../fonts/Phi_horizontal_gbrsh_2.6.ttf");
   font-weight: normal;
 }
 @font-face {
@@ -312,7 +312,7 @@ body.app{
     }
     &.rm_gibberish_map{
       span{
-        font-family: "Phi_horizontal_gbrsh_2.1";
+        font-family: "Phi_horizontal_gbrsh_2.6";
       }
     }
   }
