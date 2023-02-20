@@ -149,6 +149,7 @@ body.app #main_content #intro_picture {
   background-size: 100%;
   border-radius: var(--radius-1);
   position: relative;
+  overflow: hidden;
 }
 body.app #main_content #intro_picture span {
   display: block;
