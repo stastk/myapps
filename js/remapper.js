@@ -35,10 +35,8 @@ $(document).ready(function() {
     $('.char').on("click", function() {
         let direction = $(this).parent().data("gibberish-or-normal")
         let value = $(this).find('span').text();
-        console.log("VALUE: " + value + "; direction: " + direction + ";");
         let textarea = $("#rm_" + direction + " textarea");
         textarea.val(textarea.val() + value);
-        console.log("TEXTAREA: " + textarea.val());
         transcript_it(direction);
     });
 
@@ -46,13 +44,11 @@ $(document).ready(function() {
 
         let textarea = $("#rm_"+ gibberish_or_normal +" textarea")
         let value_to_send = rot13(textarea.val().replace(/["]/g,'\\"'));
-        console.log("value_to_send: " + value_to_send)
         $.ajax({
             url: url,
             type: "POST",
             data: {t: value_to_send, d: gibberish_or_normal},
             success: function(response){
-                console.log("response:" + response);
                 let obj = JSON.parse(response);
                 let text = String.fromCharCode.apply(null, obj['text']);
                 let direction = obj['direction'];
@@ -61,7 +57,6 @@ $(document).ready(function() {
                 $("#rm_" + direction + " textarea").val(text);
                 $("#rm_" + direction + " .transcription").html(text);
                 $("#rm_" + invert_direction + " .transcription").html($("#rm_" + invert_direction + " textarea").val());
-                console.log("direction:" + direction + "; invert_direction: " + invert_direction + "; text: " + text);
             }
         });
         return false;
