@@ -52,21 +52,21 @@ $(document).ready(function() {
                 let obj = JSON.parse(response);
                 let text = String.fromCharCode.apply(null, obj['text']);
 
-                let direction;
-                let invert_direction;
+                let direction_to;
+                let direction_from;
 
                 if (parseInt(obj['to_normal']) == 1){
-                    direction = "normal";
-                    invert_direction = "gibberish";
+                    direction_to = "gibberish";
+                    direction_from = "normal";
                 } else {
-                    direction = "gibberish";
-                    invert_direction = "normal";
+                    direction_to = "normal";
+                    direction_from = "gibberish";
                 }
 
 
-                $("#rm_" + direction + " textarea").val(text);
-                $("#rm_" + direction + " .transcription").html(text);
-                $("#rm_" + invert_direction + " .transcription").html($("#rm_" + invert_direction + " textarea").val());
+                $("#rm_" + direction_to + " textarea").val(text);
+                $("#rm_" + direction_to + " .transcription").html(text);
+                $("#rm_" + direction_from + " .transcription").html($("#rm_" + direction_from + " textarea").val());
             }
         });
         return false;
