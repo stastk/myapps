@@ -1,6 +1,6 @@
 var url = '/cgi-bin/t.cgi'
 $(document).ready(function() {
-    var version            = 2;
+
     var content            = $("textarea");
     var gibberish_textarea = $("#rm_gibberish textarea")
 
@@ -47,26 +47,16 @@ $(document).ready(function() {
         $.ajax({
             url: url,
             type: "POST",
-            data: {t: value_to_send, d: gibberish_or_normal, v: version},
+            data: {t: value_to_send, d: gibberish_or_normal, v: 2},
             success: function(response){
                 let obj = JSON.parse(response);
                 let text = String.fromCharCode.apply(null, obj['text']);
+                let direction = obj['direction'];
+                let invert_direction = obj['invert_direction'];
 
-                let direction_to;
-                let direction_from;
-
-                if (parseInt(obj['to_normal']) == 1){
-                    direction_to = "normal";
-                    direction_from = "gibberish";
-                } else {
-                    direction_to = "gibberish";
-                    direction_from = "normal";
-                }
-
-
-                $("#rm_" + direction_to + " textarea").val(text);
-                $("#rm_" + direction_to + " .transcription").html(text);
-                $("#rm_" + direction_from + " .transcription").html($("#rm_" + direction_from + " textarea").val());
+                $("#rm_" + direction + " textarea").val(text);
+                $("#rm_" + direction + " .transcription").html(text);
+                $("#rm_" + invert_direction + " .transcription").html($("#rm_" + invert_direction + " textarea").val());
             }
         });
         return false;
