@@ -52,7 +52,7 @@ $(document).ready(function() {
                 let text = String.fromCharCode.apply(null, obj['text']);
                 let direction;
                 let invert_direction;
-                if (parseInt(obj['to_normal']) == "1"){
+                if (parseInt(obj['to_normal']) != 1){
                     direction = "normal";
                     invert_direction = "gibberish"
                 } else {
