@@ -20,7 +20,7 @@ if (looks_like_number($cgi->param('v'))) {
     $ua->agent("AgentName/0.1 " . $ua->agent);
     print CGI::header();
 
-    my $url = "http://st91.ne3a.ru/remapper/v=${v}?t=${t}&d=${d}";
+    my $url = "http://st91.ne3a.ru/remapper/v${v}?t=${t}&d=${d}";
     my $req = new HTTP::Request POST => $url;
     my $res = $ua->request($req);
 
