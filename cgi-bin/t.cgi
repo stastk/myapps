@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 use warnings qw(FATAL utf8);
-use POSIX qw( isdigit );
+use Scalar::Util qw(looks_like_number);
 
 use diagnostics;
 use CGI;
@@ -12,7 +12,7 @@ use CGI::Carp 'fatalsToBrowser';
 use LWP::UserAgent;
 
 my $cgi = CGI->new;
-if (POSIX::isdigit($cgi->param('v'))) {
+if (looks_like_number($cgi->param('v'))) {
     my $t = $cgi->param('t');
     my $d = $cgi->param('d');
     my $v = $cgi->param('v');
