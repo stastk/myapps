@@ -52,12 +52,12 @@ $(document).ready(function() {
                 let text = String.fromCharCode.apply(null, obj['text']);
                 let direction;
                 let invert_direction;
-                if (parseInt(obj['to_normal']) != 1){
-                    direction = "normal";
-                    invert_direction = "gibberish"
-                } else {
+                if (parseInt(obj['to_normal']) == 1){
                     direction = "gibberish";
                     invert_direction = "normal"
+                } else {
+                    direction = "normal";
+                    invert_direction = "gibberish"
                 }
                 $("#rm_" + direction + " textarea").val(text);
                 $("#rm_" + direction + " .transcription").html(text);
