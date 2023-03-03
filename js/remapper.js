@@ -52,16 +52,17 @@ $(document).ready(function() {
                 let obj = JSON.parse(response);
                 let text = String.fromCharCode.apply(null, obj['text']);
 
+                let direction;
+                let invert_direction;
+
                 if (parseInt(obj['to_normal']) == 1){
-                    direction = "gibberish";
-                    invert_direction = "normal";
-                } else {
                     direction = "normal";
                     invert_direction = "gibberish";
-
+                } else {
+                    direction = "gibberish";
+                    invert_direction = "normal";
                 }
-                let direction = obj['direction'];
-                let invert_direction = obj['invert_direction'];
+
 
                 $("#rm_" + direction + " textarea").val(text);
                 $("#rm_" + direction + " .transcription").html(text);
