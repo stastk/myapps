@@ -1,8 +1,9 @@
 var url = '/cgi-bin/t.cgi'
 $(document).ready(function() {
-    var api_version            = 2
+
     var content            = $("textarea");
     var gibberish_textarea = $("#rm_gibberish textarea")
+
     content.bind('input propertychange', function() {
         let misunderstanding = ["q", "x", ":", "j"]
         misunderstanding.forEach(function(char) {
@@ -46,12 +47,11 @@ $(document).ready(function() {
         $.ajax({
             url: url,
             type: "POST",
-            data: {t: value_to_send, d: gibberish_or_normal, v: api_version},
+            data: {t: value_to_send, d: gibberish_or_normal},
             success: function(response){
                 let obj = JSON.parse(response);
                 let text = String.fromCharCode.apply(null, obj['text']);
-                let direction;
-                let invert_direction;
+
                 if (parseInt(obj['to_normal']) == 1){
                     direction = "gibberish";
                     invert_direction = "normal";
@@ -60,6 +60,9 @@ $(document).ready(function() {
                     invert_direction = "gibberish";
 
                 }
+                let direction = obj['direction'];
+                let invert_direction = obj['invert_direction'];
+
                 $("#rm_" + direction + " textarea").val(text);
                 $("#rm_" + direction + " .transcription").html(text);
                 $("#rm_" + invert_direction + " .transcription").html($("#rm_" + invert_direction + " textarea").val());
@@ -71,6 +74,6 @@ $(document).ready(function() {
     function rot13(string){
         return btoa(Array.from(string, (char, i) => string.charCodeAt(i)).join(","));
     };
-    
+
 
 });
