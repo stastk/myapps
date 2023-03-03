@@ -12,7 +12,7 @@ use CGI::Carp 'fatalsToBrowser';
 use LWP::UserAgent;
 
 my $cgi = CGI->new;
-if (isdigit($cgi->param('v'))) {
+if (POSIX::isdigit($cgi->param('v'))) {
     my $t = $cgi->param('t');
     my $d = $cgi->param('d');
     my $v = $cgi->param('v');
