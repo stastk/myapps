@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 use warnings qw(FATAL utf8);
-use POSIX;
+use POSIX qw( isdigit );
 
 use diagnostics;
 use CGI;
