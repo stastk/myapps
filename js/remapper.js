@@ -56,11 +56,11 @@ $(document).ready(function() {
                 let direction_from;
 
                 if (parseInt(obj['to_normal']) == 1){
-                    direction_to = "gibberish";
-                    direction_from = "normal";
-                } else {
                     direction_to = "normal";
                     direction_from = "gibberish";
+                } else {
+                    direction_to = "gibberish";
+                    direction_from = "normal";
                 }
 
 
