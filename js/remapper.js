@@ -1,6 +1,6 @@
 var url = '/cgi-bin/t.cgi'
 $(document).ready(function() {
-
+    var version            = 2;
     var content            = $("textarea");
     var gibberish_textarea = $("#rm_gibberish textarea")
 
@@ -47,7 +47,7 @@ $(document).ready(function() {
         $.ajax({
             url: url,
             type: "POST",
-            data: {t: value_to_send, d: gibberish_or_normal},
+            data: {t: value_to_send, d: gibberish_or_normal, v: version},
             success: function(response){
                 let obj = JSON.parse(response);
                 let text = String.fromCharCode.apply(null, obj['text']);
