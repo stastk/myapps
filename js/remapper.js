@@ -20,7 +20,7 @@ $(document).ready(function() {
             desc = 'space'
         } else {
             desc = values
-        };
+        }
         $(".rm_gibberish_map").append("<div class='char' data-char='" + values + "' data-gibberish-or-normal=><span>" + values + "</span><i>" + desc + "</i></div>");
     });
     $.each (nor, function( indexes, values ) {
@@ -28,7 +28,7 @@ $(document).ready(function() {
             desc = 'space'
         } else {
             desc = values
-        };
+        }
         $(".rm_normal_map").append("<div class='char' data-char='" + values + "' data-gibberish-or-normal=><span>" + values + "</span><i>" + desc + "</i></div>");
     });
 
@@ -51,20 +51,20 @@ $(document).ready(function() {
             success: function(response){
                 let obj = JSON.parse(response);
                 let text = String.fromCharCode.apply(null, obj['text']);
-                let direction = obj['direction'];
-                let invert_direction = obj['invert_direction'];
+                let direction_from = obj['direction_from'];
+                let direction_to = obj['direction_to'];
 
-                $("#rm_" + direction + " textarea").val(text);
-                $("#rm_" + direction + " .transcription").html(text);
-                $("#rm_" + invert_direction + " .transcription").html($("#rm_" + invert_direction + " textarea").val());
+                $("#rm_" + direction_to + " textarea").val(text);
+                $("#rm_" + direction_to + " .transcription").html(text);
+                $("#rm_" + direction_from + " .transcription").html($("#rm_" + direction_from + " textarea").val());
             }
         });
         return false;
-    };
+    }
 
     function rot13(string){
         return btoa(Array.from(string, (char, i) => string.charCodeAt(i)).join(","));
-    };
+    }
 
 
 });
