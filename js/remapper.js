@@ -54,6 +54,11 @@ $(document).ready(function() {
                 let direction_from = obj['direction_from'];
                 let direction_to = obj['direction_to'];
 
+                console.log("obj: " + obj);
+                console.log("direction_from: " + direction_from);
+                console.log("direction_to: " + direction_to);
+                console.log("text: " + text);
+
                 $("#rm_" + direction_to + " textarea").val(text);
                 $("#rm_" + direction_to + " .transcription").html(text);
                 $("#rm_" + direction_from + " .transcription").html($("#rm_" + direction_from + " textarea").val());
